@@ -17,14 +17,14 @@
     { "name": "/actions/main/out/right_haptic", "type": "vibration", "requirement": "optional" }
   ],
   "default_bindings": [
-    { "controller_type": "vive_controller", "binding_url": "bindings_v30_vive_controller.json" },
-    { "controller_type": "oculus_touch",    "binding_url": "bindings_v30_oculus_touch.json" },
-    { "controller_type": "knuckles",        "binding_url": "bindings_v30_knuckles.json" }
+    { "controller_type": "vive_controller", "binding_url": "bindings_v31_vive_controller.json" },
+    { "controller_type": "oculus_touch",    "binding_url": "bindings_v31_oculus_touch.json" },
+    { "controller_type": "knuckles",        "binding_url": "bindings_v31_knuckles.json" }
   ],
   "localization": [
     {
       "language_tag": "en_US",
-      "/actions/main": "Harry Potter VR (V30)",
+      "/actions/main": "Harry Potter VR (V31)",
       "/actions/main/in/left_pose": "left pose",
       "/actions/main/in/right_pose": "right pose",
       "/actions/main/in/move": "move",

@@ -2,6 +2,14 @@
 
 [README](README.md)
 
+## October 11, 2026 — consistent V31 runtime names
+
+Launcher, compositor, host, staged probe, startup/renderer/calibration filenames
+and controller binding filenames now use V31. Existing calibration values and
+saves are preserved. Missing-file messages now recommend package repair rather
+than telling release users to run an unavailable V30 build script. Engine-required
+unversioned DLL names and the internal calibration schema remain unchanged.
+
 ## October 7, 2026 — consolidated V31 release snapshot
 
 This is a consolidated description of the current work, not a claim that all

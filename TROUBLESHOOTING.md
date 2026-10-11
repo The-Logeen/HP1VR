@@ -151,7 +151,7 @@ capture if available. Its latest text change has not yet received headset sign-o
 ## Saves, upgrades and uninstall
 
 Close the game before copying saves. Back up `Runtime/Save` and
-`Runtime/VR/V30Calibration.ini`. Install upgrades into a new empty destination;
+`Runtime/VR/V31Calibration.ini`. Install upgrades into a new empty destination;
 migrate `Save*.usa` and their associated `GameSaveInfo*` files together. Do not
 copy an entire old System directory over the new build. Keep the old installation
 until you have checked the new one.

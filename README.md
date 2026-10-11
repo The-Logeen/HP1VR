@@ -10,7 +10,7 @@ mod-only release kit, not a free copy of the game and not a standalone Quest app
 
 | Release | Details |
 |---|---|
-| Build | V31, October 7, 2026 snapshot |
+| Build | V31, October 11, 2026 naming update |
 | Platform | Windows 10/11 x64; SteamVR/OpenVR |
 | Game | Compatible 2001 PC Philosopher's Stone / Sorcerer's Stone files |
 | Distribution | VR binaries, installer, configuration, bindings and VR assets |
@@ -265,9 +265,11 @@ unidentified extras in a different person's base-game installation.
 - Exit to main menu is distinct from Exit Game. Exit Game closes the HP1 VR
   session/host/companion, not the SteamVR runtime or other running VR games.
 
-Settings: Runtime/VR/V30Calibration.ini. Renderer: Runtime/System/StereoV30VR.ini.
-Input: Runtime/System/VRUser.ini. Startup: HP1VR-V30.ini beside the launcher.
-Legacy V30 filenames are intentional internal names in this V31 build.
+Settings: Runtime/VR/V31Calibration.ini. Renderer: Runtime/System/StereoV31VR.ini.
+Input: Runtime/System/VRUser.ini. Startup: HP1VR-V31.ini beside the launcher.
+The October 11 naming update uses V31 runtime/configuration filenames throughout.
+An existing calibration's internal section name remains compatible; its values
+are preserved when migrating to V31Calibration.ini.
 Keep UseJoystick=False. Resolution defaults to the current 1280-square eye
 rendering; lower WorldSize to 1024 if performance suffers. Do not stack aggressive
 SteamVR global/per-app supersampling without checking total render resolution.
@@ -277,7 +279,9 @@ SteamVR global/per-app supersampling without checking total render resolution.
 New installations start without personal saves. To migrate while both games are
 closed, copy your Save*.usa and associated GameSaveInfo* files into Runtime/Save;
 back up destination saves first. Save at an actual save book before boss fights.
-Back up Runtime/Save and V30Calibration.ini before replacing an installation.
+Back up Runtime/Save and V31Calibration.ini before replacing an installation.
+When migrating from an earlier V31 package, copy its V30Calibration.ini as
+V31Calibration.ini; do not change the internal section name or reset its values.
 
 Code 7 is not automatically a SteamVR failure. Inspect the last hostExit= line
 in Runtime/VR/compositor.log, then Runtime/System/HP1VRHost.log. Logs are generated
