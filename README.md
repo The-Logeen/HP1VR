@@ -49,22 +49,16 @@ ships binaries; the C++ source tree is not included. See
 These are implemented systems, not a guarantee that every scene, headset or
 third-party game build has been fully playtested. See [known issues](TROUBLESHOOTING.md).
 
-## Start here
+## Quick start
 
-1. Download **HP1-VR-V31-….zip** from this repository's **Releases** page
-   (or use **Code → Download ZIP**). Right-click the ZIP → Extract All. Do not
-   run anything from inside the ZIP.
-2. Get your compatible original PC game and the [dependencies below](#exact-downloads),
-   and extract the renderer and texture-pack archives.
-3. Run **Install.cmd**, select the four folders, then Verify inputs → Install V31.
-   If Windows SmartScreen says it protected your PC, choose More info → Run
-   anyway; the mod is unsigned.
-4. Connect your headset through SteamVR and launch **Launch-HP1-VR-V31.exe** from
-   the new installation.
-5. Stand upright, open VR settings with the game-menu button + right grip,
-   and follow [first-run calibration](CONTROLS.md#first-run-calibration).
+1. Get the required items in [What you need](#what-you-need).
+2. Extract this mod, run **Install.cmd**, select your four folders, then click
+   **Verify inputs** → **Install V31**.
+3. Start SteamVR and run **Launch-HP1-VR-V31.exe** from the new installation folder.
 
-### Documentation
+Full instructions: [Install, step by step](#install-step-by-step).
+
+## Documentation
 
 - [Controls and how to play](CONTROLS.md)
 - [Complete settings reference](SETTINGS.md)
@@ -75,79 +69,152 @@ third-party game build has been fully playtested. See [known issues](TROUBLESHOO
 - [GitHub publishing checklist](PUBLISHING.md)
 - [License (MIT)](LICENSE) and [license/provenance status](LICENSE-STATUS.md)
 
-## Requirements and supported scope
+## Install, step by step
 
-A VR-capable Windows 10/11 x64 PC, compatible headset with two tracked controllers,
-working SteamVR connection, and several GB of free space for the installed game
-and texture pack are required. The measured private enhanced installation is
-about 1.69 GiB; allow additional space for downloads and backups. No minimum GPU
-model or guaranteed frame rate has been established. Quest requires a PC VR
-connection; installing this folder directly on a headset will not work.
+You do every step once. After that you just start SteamVR and launch the game.
 
-Bundled bindings cover Oculus Touch, Index/Knuckles and Vive controllers. Binding
-availability is not certification of every headset/controller combination.
-Other layouts may require SteamVR remapping. No Linux, standalone-headset,
-multiplayer or universal regional-game compatibility is claimed.
+### What you need
 
-Snapshot: October 7, 2026. Requires your own compatible 2001 Windows PC Harry
-Potter and the Philosopher's Stone / Sorcerer's Stone installation. Not the
-PlayStation game, Chamber of Secrets, or Hogwarts Legacy. This kit contains no
-base-game packages, DX11 renderer or ESRGAN pack. It does include the VR code,
-VR art, controller bindings and OpenVR client DLLs with Valve's license.
+Get every **required** item before you start. The installer checks each one and
+stops with a clear message if something is missing or the wrong version.
 
-## Install with buttons
+| | Item | Where it comes from |
+|---|---|---|
+| Required | Windows 10 or 11, 64-bit, VR-capable PC | — |
+| Required | PC VR headset with two tracked controllers (Quest works only through Link/Air Link/Virtual Desktop) | — |
+| Required | **SteamVR**, installed and working with your headset | [Steam](https://store.steampowered.com/app/250820/SteamVR/) |
+| Required | Your own **2001 PC Harry Potter and the Philosopher's Stone / Sorcerer's Stone**, installed (English engine 433 files) | Your own copy; not supplied here |
+| Required | **HP1 DirectX 11 renderer 1.6.2** (`hp1dx11renderer162.zip`) | [gamepressure.com](https://www.gamepressure.com/download/harry-potter-and-the-sorcerers-stone-directx11-renderer-v162-mod/zb12ae2) |
+| Required | **ESRGAN Upscale Pack v3** (`Harry_Potter_and_the_Sorcerers_Stone_ESRGAN_Upscale_Pack_v3.7z`) | [moddb.com](https://www.moddb.com/addons/harry-potter-and-the-sorcerers-stone-esrgan-upscale-pack-v3) |
+| Required | **Visual C++ 2010 SP1 runtime, x86** (`vcredist_x86.exe`) | [microsoft.com](https://www.microsoft.com/en-us/download/details.aspx?id=26999) |
+| Required | **DirectX End-User Runtimes, June 2010** (`directx_Jun2010_redist.exe`) | [microsoft.com](https://www.microsoft.com/en-us/download/details.aspx?id=8109) |
+| Required | **7-Zip**, to open the texture pack's `.7z` file | [7-zip.org](https://www.7-zip.org/) |
+| Required | Several GB of free disk space (the finished install is about 1.7 GB, plus downloads) | — |
 
-1. Extract this whole kit to a writable folder. Do not run from inside a ZIP.
-2. Run **Install.cmd**. Windows PowerShell 5.1 and Windows Forms are built into
-   supported Windows 10/11 x64 installations. This setup is unsigned; review the
-   scripts if desired. It does not change machine execution policy, registry,
-   antivirus settings or your original game. It does not require administrator
-   rights for copying into your own writable folder.
-3. Use the download buttons listed below. Extract the renderer ZIP and texture
-   7z separately. Install the two Microsoft runtime packages using their own
-   official installers. SteamVR and your headset's PC connection software must
-   already work before playing.
-4. Select your game folder (contains System and Maps); the extracted renderer
-   folder (contains Common and Harry Potter 1); the extracted ESRGAN v3 folder
-   (contains System and Textures); and a NEW/EMPTY destination outside all inputs.
-5. Click **Verify inputs**, then **Install V31**. Hashing the texture pack takes
-   time. Unsupported engine/script files are rejected, not silently installed.
-6. Start SteamVR with the headset connected, then double-click
-   **Launch-HP1-VR-V31.exe** in the NEW installed folder. Do not launch HP.exe.
+Not supported: the PlayStation version, Chamber of Secrets, Hogwarts Legacy,
+Linux, or installing directly on a standalone headset.
 
-## Exact downloads
+### Step 1 — Check your game folder
 
-- HP1 DirectX11 renderer **1.6.2**, archive `hp1dx11renderer162.zip`:
-  https://www.gamepressure.com/download/harry-potter-and-the-sorcerers-stone-directx11-renderer-v162-mod/zb12ae2
-  Creator: darknovismc / Marcin Nowicki. HP1-specific DLL SHA256:
-  `0F5952AD10236AA5BCFCB8FC45E558E52E26F08CA0E2BF70F4B602D6A940DA55`.
-  Other-game DLLs and modified mirrors are not interchangeable, even if labeled
-  1.6.2. Installer checks the actual file, not just the archive name.
-- Akven's **ESRGAN Upscale Pack v3**, January 4, 2022:
-  https://www.moddb.com/addons/harry-potter-and-the-sorcerers-stone-esrgan-upscale-pack-v3
-  Archive `Harry_Potter_and_the_Sorcerers_Stone_ESRGAN_Upscale_Pack_v3.7z`.
-  The installer checks the extracted files against the supported pack hashes.
-  This is a 4x upscale pack, not a promise every texture is 4096x4096.
-- Microsoft **Visual C++ 2010 SP1 MFC Security Update**, choose **x86**:
-  https://www.microsoft.com/en-us/download/details.aspx?id=26999
-  Install `vcredist_x86.exe`, including on 64-bit Windows. The renderer needs
-  MSVCR100/MSVCP100; installing only modern VC++ 2015-2022 does not provide these.
-- Microsoft **DirectX End-User Runtimes (June 2010)**:
-  https://www.microsoft.com/en-us/download/details.aspx?id=8109
-  `directx_Jun2010_redist.exe` extracts a temporary folder; run **DXSETUP.exe**
-  there afterward. Supplies D3DX11_43/D3DCompiler_43. Having DirectX 12 alone
-  does not supply these legacy libraries. Never obtain individual DLLs from
-  random DLL-download sites.
-- **SteamVR**, current stable Steam-managed release:
-  https://store.steampowered.com/app/250820/SteamVR/
-  No specific SteamVR build is pinned or bundled. Steam installs/updates it.
-- Optional extraction tool **7-Zip**: https://www.7-zip.org/
-  No exact extraction-tool version required. Windows' ZIP extraction suffices
-  for the renderer; the texture archive also needs 7z support.
+Find the folder where HP1 is installed. It must contain a **System** folder and a
+**Maps** folder, and `System` must contain `HP.exe`, `Engine.dll` and
+`HarryPotter.u`. Write down this folder's path; you will select it in step 6.
+The installer only reads from it and never changes it.
 
-Version-specific download pages verified October 7, 2026. Buttons open websites;
-they do not silently download or execute third-party software. OS/headset drivers
-and SteamVR cannot be made portable by copying a game folder.
+### Step 2 — Install the two Microsoft runtimes
+
+1. Download `vcredist_x86.exe` from the Visual C++ 2010 link. Choose **x86**
+   even on 64-bit Windows. Run it and click through to finish. (Newer
+   "2015–2022" runtimes do **not** replace this one.)
+2. Download `directx_Jun2010_redist.exe` and run it. It only asks for a folder
+   to unpack into: pick a new empty folder, such as `C:\DXTemp`.
+3. Open that folder and run **DXSETUP.exe**. Click through to finish. You can
+   delete `C:\DXTemp` afterwards. (Having DirectX 12 does **not** include these
+   older files.)
+
+Only use the Microsoft links above. Never download single DLL files from
+"DLL download" sites.
+
+### Step 3 — Download and extract the DX11 renderer
+
+1. Download `hp1dx11renderer162.zip` (version **1.6.2**, the HP1 build).
+2. Right-click it → **Extract All…** into a folder such as
+   `C:\HP1VR-Downloads\hp1dx11renderer162`.
+3. Open that folder. The folder you will select later is the one that directly
+   contains both **Common** and **Harry Potter 1**. If you see a single folder
+   instead, go one level deeper until you see those two.
+
+Do not copy anything into your game folder, and ignore the renderer's own
+instructions to delete `HP.ini`. The VR installer handles all of this.
+
+### Step 4 — Download and extract the texture pack
+
+1. Download the ESRGAN v3 `.7z` file.
+2. Right-click it → **7-Zip → Extract to "…\"** into a folder such as
+   `C:\HP1VR-Downloads\ESRGAN-v3`.
+3. The folder you will select later is the one that directly contains
+   **System** and **Textures**.
+
+### Step 5 — Download and extract this mod
+
+1. On this repository's **Releases** page, download **HP1-VR-V31-….zip**
+   (or click **Code → Download ZIP** on the main page).
+2. Right-click the ZIP → **Extract All…** into a normal folder you can write to,
+   such as `C:\HP1VR-Downloads\HP1 VR V31 Mod`. Do not run anything from inside
+   the ZIP, and do not extract it into your game folder.
+
+### Step 6 — Run the installer
+
+1. In the extracted mod folder, double-click **Install.cmd**. If Windows says
+   "Windows protected your PC", click **More info → Run anyway**; the mod is not
+   code-signed. No administrator rights are needed.
+2. A window titled **HP1 VR V31 – Install into a separate folder** opens. Fill in
+   the four boxes with **Browse**:
+
+   | Box | Select the folder that contains… | Example |
+   |---|---|---|
+   | Your compatible HP1 game folder | `System` and `Maps` (step 1) | `D:\Games\Harry Potter` |
+   | Extracted HP1 renderer 1.6.2 folder | `Common` and `Harry Potter 1` (step 3) | `C:\HP1VR-Downloads\hp1dx11renderer162` |
+   | Extracted ESRGAN v3 folder | `System` and `Textures` (step 4) | `C:\HP1VR-Downloads\ESRGAN-v3` |
+   | New / empty installation folder | nothing; it must be new or empty | `C:\Users\you\Documents\HP1 VR V31 Installed` (the default) |
+
+   The installation folder must not be inside any of the other three folders.
+3. Click **Verify inputs**. This reads and checks every file and can take
+   several minutes because of the texture pack. Wait for the result in the
+   text box at the bottom.
+4. When it finishes without "FAILED", click **Install V31**. This copies
+   everything into the installation folder. Your original game, the downloads
+   and the mod folder are left untouched.
+
+### Step 7 — Play
+
+1. Turn on your headset and start **SteamVR**. Wait until SteamVR shows the
+   headset and both controllers as connected (green).
+2. Open your **installation folder** from step 6 (not the mod download folder)
+   and double-click **Launch-HP1-VR-V31.exe**. Never start `HP.exe` directly.
+3. Put on the headset and stand up straight while the game starts.
+4. Squeeze both grips to recenter. Open VR settings with the **game-menu button
+   + right grip** (left Y on Touch, left B on Index, left menu button on Vive)
+   and follow [first-run calibration](CONTROLS.md#first-run-calibration).
+
+Your saves and settings live inside the installation folder. To move it, move
+the whole folder; it no longer needs the original game folder.
+
+### If the installer stops
+
+| Message | What to do |
+|---|---|
+| `Required file missing: …\System\…` or `…\Maps\Lev_Tut1.unr` | The first box is not the game folder. Pick the folder that contains `System` and `Maps`. |
+| `Unsupported engine/script build: …` | Your game files are a different version or are modded. This build only works with the tested English files; do not swap in random DLLs. |
+| `This installer expects the HP1 DX11 renderer 1.6.2…` or `Renderer 1.6.2 component mismatch` | Re-download the renderer from the link above (version 1.6.2, HP1 build) and extract it fresh. |
+| `Texture pack must contain its Textures folder` | Pick the folder that directly contains `System` and `Textures`. |
+| `Texture pack version/file mismatch` | Re-download ESRGAN pack **v3** and extract it with 7-Zip into a new folder. |
+| `Destination is not empty` | Choose a new folder name for the installation. Nothing was overwritten. |
+| `Package file damaged or changed: …` | The mod download is incomplete or was edited. Download the release ZIP again and extract it fresh. |
+| Game shows a missing `MSVCR100.dll`, `D3DX11_43.dll` or `D3DCompiler_43.dll` | Redo step 2. |
+
+For crashes, "Code 7" and other problems after installing, see
+[TROUBLESHOOTING.md](TROUBLESHOOTING.md).
+
+### Download reference
+
+- The renderer's HP1 DLL (`Harry Potter 1\d3d11drv.dll`) must have SHA-256
+  `0F5952AD10236AA5BCFCB8FC45E558E52E26F08CA0E2BF70F4B602D6A940DA55`. Renderer
+  DLLs for other games, or modified mirrors labeled 1.6.2, will be rejected.
+- The texture pack is Akven's v3 release of January 4, 2022, a 4x upscale.
+- SteamVR is not pinned to a version; use Steam's current stable release.
+- Download pages were checked on October 7, 2026. The installer's download
+  buttons only open these pages in your browser; nothing is downloaded or run
+  automatically.
+
+### Supported scope
+
+No minimum GPU or guaranteed frame rate has been established. Bundled controller
+bindings cover Oculus Touch, Index/Knuckles and Vive; other controllers may need
+remapping in SteamVR. Regional game versions, community script revisions and
+other gameplay mods are not supported. This kit contains the VR code, VR art,
+controller bindings and Valve's OpenVR DLLs; it contains no game files, renderer
+or texture pack.
 
 ## How the base game is connected
 
