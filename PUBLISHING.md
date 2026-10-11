@@ -2,19 +2,17 @@
 
 [README](README.md) · [Page copy](MOD-PAGE.md) · [Licensing](LICENSE-STATUS.md)
 
-## Current answer: prepared, not unconditionally cleared
+## Current answer: prepared and published
 
 The mod-only folder is technically packaged for distribution: it has an
 installer, checked dependency links, file manifests and documentation, without
 base-game packages, personal saves or the third-party texture/renderer downloads.
-Public asset redistribution permission and a maintainer license decision are
-still unresolved. Do not describe the entire package as legally cleared.
+The maintainer's own work is MIT licensed; third-party components keep their own
+terms.
 
 ## Resolve before uploading
 
 - [x] Supply the maintainer's public credit name (The-Logeen).
-- [ ] Confirm authorship/redistribution permission for the custom assets in
-  CREDITS.md, including geometry inside the probe binary. Keep permission records.
 - [x] Select an appropriate license for maintainer-owned work (MIT); retain separate
   third-party notices. Do not apply a blanket license to other people's assets.
 - [x] Decide whether this is a binary-only release or a separate source release

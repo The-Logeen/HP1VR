@@ -67,7 +67,7 @@ Full instructions: [Install, step by step](#install-step-by-step).
 - [Credits and third-party components](CREDITS.md)
 - [Copy-ready mod-page descriptions](MOD-PAGE.md)
 - [GitHub publishing checklist](PUBLISHING.md)
-- [License (MIT)](LICENSE) and [license/provenance status](LICENSE-STATUS.md)
+- [License (MIT)](LICENSE) and [license status](LICENSE-STATUS.md)
 
 ## Install, step by step
 

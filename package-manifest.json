@@ -6,8 +6,8 @@
     "files":  [
                   {
                       "path":  "CHANGELOG.md",
-                      "bytes":  3448,
-                      "sha256":  "0DA07B6B10C74878992CA64DFFC6773CF818D93DC02BECD44848E0D6BA6AAAF4"
+                      "bytes":  3335,
+                      "sha256":  "2520EBE4F262729AB351BC48C74D921EF7334FBDB9F025FDF031F412BCD2A0E6"
                   },
                   {
                       "path":  "CONTROLS.md",
@@ -16,8 +16,8 @@
                   },
                   {
                       "path":  "CREDITS.md",
-                      "bytes":  2586,
-                      "sha256":  "66DFEEA11D5449C52C39C50FC361A5D04669A4426DC66F92E81A7620C6C6E133"
+                      "bytes":  1396,
+                      "sha256":  "925A166E0E6FC29309C684EBBD850CF2575D3EA63C42144EEBBED5C29B0E2111"
                   },
                   {
                       "path":  "DEPENDENCIES.json",
@@ -46,8 +46,8 @@
                   },
                   {
                       "path":  "LICENSE-STATUS.md",
-                      "bytes":  1477,
-                      "sha256":  "6358376ECC8017413AE32257A6C905016783B62E423D57E0FE226109C116DC3F"
+                      "bytes":  1009,
+                      "sha256":  "E37F4421C577CC6C1D1E10F6BA3A5D0F6005CD9BBA457AD4A6901D18855EAD91"
                   },
                   {
                       "path":  "MOD-PAGE.md",
@@ -61,13 +61,13 @@
                   },
                   {
                       "path":  "PUBLISHING.md",
-                      "bytes":  4886,
-                      "sha256":  "3B7D1891420A8AEFCD267743C2C8011E89B4C20D23DEE00363E10DC89AA756D3"
+                      "bytes":  4650,
+                      "sha256":  "99A34C5B17656952F956584BA2B94FE2608F4CB80319CCF08F6B883E38453B4A"
                   },
                   {
                       "path":  "README.md",
-                      "bytes":  18842,
-                      "sha256":  "72F895E4556A409FA1F3EFAAC3B95D3946272B9D74D56D786188BF6886DB528B"
+                      "bytes":  18831,
+                      "sha256":  "84E07F08B072B9A48B047929473A6662AAE7B0804DBBE69D1FF7A4C017F533B5"
                   },
                   {
                       "path":  "renderer-files.json",

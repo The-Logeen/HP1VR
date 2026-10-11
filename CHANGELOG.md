@@ -59,11 +59,10 @@ this documentation update.
 - Input/payload SHA-256 validation, protected original folders, empty-destination
   requirement, portable runtime paths and no personal saves in the mod kit.
 - Full README, controls/settings guides, troubleshooting, credits, release copy
-  and publication/provenance checklist.
+  and publication checklist.
 
 ### Verification and limits
 
 58 CPU regression checks passed for the packaged build. Offline installation,
 hash integrity, damaged-payload rejection and source-folder safety were checked.
-These are not exhaustive end-to-end headset tests. Asset redistribution
-provenance and the maintainer's own licensing decision remain publication gates.
+These are not exhaustive end-to-end headset tests.

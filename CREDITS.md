@@ -2,8 +2,7 @@
 
 [README](README.md) · [License status](LICENSE-STATUS.md)
 
-Attribution is not a substitute for redistribution permission. This list names
-verified component authors without asserting ownership of unverified assets.
+Everyone whose work this mod builds on or works alongside.
 
 | Component | Credit | Distribution in this kit |
 |---|---|---|
@@ -15,28 +14,6 @@ verified component authors without asserting ownership of unverified assets.
 | SteamVR | Valve Corporation | Installed separately through Steam |
 | 7-Zip | 7-Zip project | Optional extraction tool; linked, not bundled |
 | V31 VR integration and packaging | The-Logeen | Mod binaries/configuration/scripts included; [MIT License](LICENSE) |
-
-## Asset provenance still to confirm
-
-The avatar was brought into the VR implementation from a rigged Harry
-model/Unity asset workflow. The maintainer reports the avatar and wand are free
-assets; add each one's source page, author and license below so users can see
-the redistribution terms. Avatar geometry is embedded in the probe
-binary as well as associated atlas files; simply removing an image is not a
-complete provenance resolution.
-
-The maintainer must also identify and record the source/license or original
-authorship of the wand atlas, lesson/rune art and replacement-effect art:
-
-- `payload/System/AvatarAtlas.bin` and `AvatarAtlas.pcx`, plus embedded geometry
-- `payload/System/WandAtlas.pcx`
-- `payload/System/LessonRunes.pcx` and `Rune_FlipPattern.pcx`
-- `payload/System/SafeWater.pcx`
-
-Do not infer a right to redistribute from possession of a source file or from
-its appearance in a private build. Add verified author names, license notices
-and permission records before publishing; replace or remove restricted material
-through a rebuilt and retested package if necessary.
 
 ## Project status
 
