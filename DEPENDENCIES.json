@@ -1,0 +1,8 @@
+[
+ {"label":"HP1 DX11 renderer 1.6.2","url":"https://www.gamepressure.com/download/harry-potter-and-the-sorcerers-stone-directx11-renderer-v162-mod/zb12ae2","version":"1.6.2; hp1dx11renderer162.zip","required":true},
+ {"label":"ESRGAN texture pack v3","url":"https://www.moddb.com/addons/harry-potter-and-the-sorcerers-stone-esrgan-upscale-pack-v3","version":"v3, January 4 2022","required":true},
+ {"label":"VC++ 2010 SP1 - choose x86","url":"https://www.microsoft.com/en-us/download/details.aspx?id=26999","version":"10.0 SP1 MFC Security Update, vcredist_x86.exe","required":true},
+ {"label":"DirectX June 2010 runtime","url":"https://www.microsoft.com/en-us/download/details.aspx?id=8109","version":"June 2010, 9.29.1974.1, directx_Jun2010_redist.exe","required":true},
+ {"label":"SteamVR (Steam)","url":"https://store.steampowered.com/app/250820/SteamVR/","version":"Current stable Steam-managed release; no pinned build required","required":true},
+ {"label":"7-Zip (extract downloads)","url":"https://www.7-zip.org/","version":"Current stable x64; extraction tool only","required":false}
+]

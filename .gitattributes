@@ -1,0 +1,10 @@
+# Keep every file byte-for-byte as committed. Install.ps1 checks each kit file
+# against the SHA-256 in package-manifest.json, so Git's line-ending conversion
+# (core.autocrlf on Windows) would make setup reject a cloned kit as "damaged".
+* -text
+
+# Keep repository tooling out of GitHub's "Download ZIP" so players get only the kit.
+.github export-ignore
+tools export-ignore
+.gitattributes export-ignore
+.gitignore export-ignore

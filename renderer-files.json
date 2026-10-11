@@ -1,0 +1,110 @@
+[
+    {
+        "path":  "Common/D3D11Drv.int",
+        "sha256":  "DF6CA85BCD562A0BEBDA9C68BF2BDEBF033FA869CEC8B73B52D54A06ECFD3872"
+    },
+    {
+        "path":  "Common/Effects11.dll",
+        "sha256":  "89DD37F10227AE8AE2C8EF77847EEB3AA84062C7DCD93BA7E79A7DB08CB7173C"
+    },
+    {
+        "path":  "Common/d3d11drv/ASSAO.fco",
+        "sha256":  "495CB84D6013D73E383EF082044B30FE66568C0A17BF8F705317D32DEE701791"
+    },
+    {
+        "path":  "Common/d3d11drv/common.fxh",
+        "sha256":  "9BA658514F74A3A91D85278C7D8C986D95C7BF2585CC5BFD67C90FE5C6A59CB9"
+    },
+    {
+        "path":  "Common/d3d11drv/complexsurface.fco",
+        "sha256":  "058DD1807A38A85B804F03EDB54F7A669EA4706A5C390A64B716FF1B7928A2CE"
+    },
+    {
+        "path":  "Common/d3d11drv/finalpass.fco",
+        "sha256":  "841009B9F33C056E2DB96D6FB5B9FE535A150E26B347143108E29C100FE64E13"
+    },
+    {
+        "path":  "Common/d3d11drv/firstpass.fco",
+        "sha256":  "344F7A717B4ED1B921C287B20ED0D066F5CA18B657BBC0C03F12BA924C892504"
+    },
+    {
+        "path":  "Common/d3d11drv/fogsurface.fco",
+        "sha256":  "2629F57F9E3447CD6E291852CE6D9355D0060A6E65EF550969AF758332BF3E0E"
+    },
+    {
+        "path":  "Common/d3d11drv/gouraudpolygon.fco",
+        "sha256":  "ABEE1B8D6B5589072B72BFA321E3424C6E3AA706E424AA5DA2AE610AD1470D1D"
+    },
+    {
+        "path":  "Common/d3d11drv/gouraudpolygonTess.fco",
+        "sha256":  "7FE8878B9DAE7F448ED911B6E1E11E9A9FCBF4DFCC378F3B6C88A3ABDF33E3B4"
+    },
+    {
+        "path":  "Common/d3d11drv/gouraudShadow.fco",
+        "sha256":  "76A636B05BE61C2873091A3574C12E4D0DDB8E3643655D9FAD06C477B9F90D6C"
+    },
+    {
+        "path":  "Common/d3d11drv/hdr.fco",
+        "sha256":  "7A55409DD02985626C25F0FF9DF4C53A56B5EEF74928A2C375C6EE304AF9F92B"
+    },
+    {
+        "path":  "Common/d3d11drv/polyflags.fxh",
+        "sha256":  "D36225700E3928E0B6ADF4B069B581763E9AA7941A3F49B122E8DCF9E6EF830E"
+    },
+    {
+        "path":  "Common/d3d11drv/postprocessing.fxh",
+        "sha256":  "7E3AFBC8FDCB168C78468E4096234167E8200BDD610932418B0C852D75FF026A"
+    },
+    {
+        "path":  "Common/d3d11drv/ssaoResolve.fco",
+        "sha256":  "16BA148B8A989F003588EFA6E6B910F18EAB0AF7612C5EF0BB18E5200BBA0CCB"
+    },
+    {
+        "path":  "Common/d3d11drv/ssr.fco",
+        "sha256":  "D40E3EDAF10F17B27AC227D2D8CB7286DD14DFAA9B61862693C6E03F7BCF2696"
+    },
+    {
+        "path":  "Common/d3d11drv/ssrBlur.fco",
+        "sha256":  "638B2D795C10648DEA823BEA604C29FD386431437E26202FB2CB2FB494CC5F96"
+    },
+    {
+        "path":  "Common/d3d11drv/ssrBlurUV.fco",
+        "sha256":  "B4D56647BF859862C20052539895A932115B505A65EDF8AB0FF6453CD2DAFB25"
+    },
+    {
+        "path":  "Common/d3d11drv/ssrCombine.fco",
+        "sha256":  "2EC66474715B39A0A3F6F538222333169D75912BFDA4E6F83EF8CA27A35832D3"
+    },
+    {
+        "path":  "Common/d3d11drv/ssrResolve.fco",
+        "sha256":  "116ECCB95D9D48CB576A256F9F70D5E3B69E8227592085D66E8667EE20E8D852"
+    },
+    {
+        "path":  "Common/d3d11drv/states.fco",
+        "sha256":  "CA7E227817107C90A74984C8125E6DC38705E3DD0AE84DC6C32B01020DF09FB6"
+    },
+    {
+        "path":  "Common/d3d11drv/states.fxh",
+        "sha256":  "CE3A2A83C826D6F101320C8CDD4C0AD9469AB7327933F42486655DB408C13B95"
+    },
+    {
+        "path":  "Common/d3d11drv/tile.fco",
+        "sha256":  "BF1ABEF7F3554214453F50E0816EF7089D89C39D67A9DD7172AEFD97DE0DDEB7"
+    },
+    {
+        "path":  "Common/d3d11drv/unrealpool.fxh",
+        "sha256":  "170E7A5649F4CBF19280E7D31D9E744983D95A558EDB694D3A392089F034AE76"
+    },
+    {
+        "path":  "Common/d3d11drv/unreal_pom.fxh",
+        "sha256":  "6655D169E3B6BC6B024D2439705979E687106FC80E4AB365270140C856AE966E"
+    },
+    {
+        "path":  "Harry Potter 1/d3d11drv.dll",
+        "sha256":  "0F5952AD10236AA5BCFCB8FC45E558E52E26F08CA0E2BF70F4B602D6A940DA55"
+    },
+    {
+        "path":  "Harry Potter 1/tessellation.cfg",
+        "sha256":  "874A154515386E2B692134568642CAE2EFFCF379D9C3A1EAE7E4A5F5CD01B234"
+    }
+]

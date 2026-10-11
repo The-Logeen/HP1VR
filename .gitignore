@@ -1,0 +1,50 @@
+# Repository holds the mod kit only. See PUBLISHING.md before committing.
+# This file is a convenience, not a rights audit: review `git status` first.
+
+# Installed or private playable copies (contain game content and saves)
+/HP1 VR V31 Final Playable/
+/HP1 VR V31 Production/
+/HP1 VR V31 Installed/
+Runtime/
+installation-manifest.json
+
+# Personal saves and calibration
+Save/
+Save*.usa
+GameSaveInfo*
+V30Calibration.ini
+
+# Base-game content (never redistributed)
+Maps/
+Music/
+Sounds/
+Textures/
+*.unr
+*.u
+*.utx
+*.uax
+*.umx
+*.dds
+
+# Downloaded dependencies and archives
+*.zip
+*.7z
+*.rar
+vcredist_*.exe
+directx_*_redist.exe
+DXSETUP.exe
+d3d11drv.dll
+
+# Logs, caches and build leftovers
+*.log
+*.bak
+*.tmp
+*.pdb
+*.obj
+*.lib
+Cache/
+Thumbs.db
+desktop.ini
+
+# Release builds
+dist/
