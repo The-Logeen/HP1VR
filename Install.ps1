@@ -83,12 +83,12 @@ if($MenuLanguage){PutTree (Join-Path $MenuAddonRoot "$MenuLanguage\Textures") 'T
 # Our VR overrides are last. No original package is altered by the water fix.
 PutTree (Join-Path $kit 'payload\System') 'System' 'vr-mod'
 PutTree (Join-Path $kit 'payload\VR') 'VR' 'vr-mod'
-PutFile (Join-Path $kit 'config\StereoV30VR.ini') 'System\StereoV30VR.ini' 'vr-mod-config'
+PutFile (Join-Path $kit 'config\StereoV31VR.ini') 'System\StereoV31VR.ini' 'vr-mod-config'
 PutFile (Join-Path $kit 'config\VRUser.ini') 'System\VRUser.ini' 'vr-mod-controls'
 Copy-Item -LiteralPath (Join-Path $kit 'Launch-HP1-VR-V31.exe') -Destination $Destination
-$launch=[IO.File]::ReadAllText((Join-Path $kit 'config\HP1VR-V30.ini'))
+$launch=[IO.File]::ReadAllText((Join-Path $kit 'config\HP1VR-V31.ini'))
 # The versioned template already has one portable [Paths] section.
-[IO.File]::WriteAllText((Join-Path $Destination 'HP1VR-V30.ini'),$launch)
+[IO.File]::WriteAllText((Join-Path $Destination 'HP1VR-V31.ini'),$launch)
 Copy-Item -LiteralPath (Join-Path $kit 'README.md') -Destination (Join-Path $Destination 'START HERE.md')
 Get-ChildItem -LiteralPath $kit -Filter '*.md' -File | ForEach-Object { Copy-Item -LiteralPath $_.FullName -Destination $Destination }
 Copy-Item -LiteralPath (Join-Path $kit 'OPENVR-LICENSE.txt') -Destination $Destination

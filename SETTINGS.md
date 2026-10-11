@@ -5,8 +5,9 @@
 Open VR settings with the controller menu button plus right grip (Touch: Y +
 right grip). Use the right-hand pointer and trigger, or the left stick to select
 and adjust. The VR menu pauses gameplay. Close it before testing a change.
-Settings save to `Runtime/VR/V30Calibration.ini`; back this up before resetting.
-V30 in internal filenames is intentional, not an older release.
+Settings save to `Runtime/VR/V31Calibration.ini`; back this up before resetting.
+Runtime/configuration filenames now use V31. The calibration section schema is
+unchanged so existing saved values can be migrated without recalibration.
 
 Defaults below describe a fresh mod-kit installation, not an existing player's
 saved calibration. Some rows are contextual or read-only. Distances are virtual
@@ -188,7 +189,7 @@ a specific problem. Sharpness cannot reconstruct absent texture detail. The
 separately installed ESRGAN pack is a 4× upscale, not uniform native 4K assets.
 No DLSS/FSR integration is claimed.
 
-`HP1VR-V30.ini` beside the launcher contains `WorldSize`: default 1280 square per
+`HP1VR-V31.ini` beside the launcher contains `WorldSize`: default 1280 square per
 eye, supported range 640–1536. Exit the game before editing it. 1024 is a useful
 performance comparison. SteamVR scaling is an additional factor: begin with
 global and per-app resolution at 100%, check actual dimensions and frametime,
@@ -207,9 +208,9 @@ personal setup, not just the currently selected row.
 
 | File | Purpose |
 |---|---|
-| `HP1VR-V30.ini` | Launcher/runtime selection and eye-output settings |
-| `Runtime/VR/V30Calibration.ini` | In-game VR preferences and calibration |
-| `Runtime/System/StereoV30VR.ini` | Renderer/game VR configuration |
+| `HP1VR-V31.ini` | Launcher/runtime selection and eye-output settings |
+| `Runtime/VR/V31Calibration.ini` | In-game VR preferences and calibration |
+| `Runtime/System/StereoV31VR.ini` | Renderer/game VR configuration |
 | `Runtime/System/VRUser.ini` | Native input configuration; keep `UseJoystick=False` |
 | `Runtime/Save` | Your saves, independent of the original installation |
 

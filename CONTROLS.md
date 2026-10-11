@@ -2,8 +2,8 @@
 
 [Back to README](README.md) · [Settings](SETTINGS.md)
 
-These are the bundled bindings. Custom SteamVR bindings can change them. Some
-SteamVR action names still contain V30: these are intentional internal names.
+These are the bundled bindings. Custom SteamVR bindings can change them. The
+binding filenames now use V31; the actual gameplay action paths are unchanged.
 Context changes what an input does; triggers used for flying, a held object or
 a menu are not ordinary walking/casting inputs at the same time.
 
@@ -42,7 +42,7 @@ bindings. Game-menu inputs are different from the headset's SteamVR/system menu.
 6. Pick smooth or snap turning, adjust wand holster reach, then close settings
    with the same chord. Avoid altering Advanced/Compatibility controls casually.
 
-Your settings save in Runtime/VR/V30Calibration.ini. New mod installations do
+Your settings save in Runtime/VR/V31Calibration.ini. New mod installations do
 not ship someone else's calibration. The private playable snapshot does retain
 its owner's settings. Defaults leave the experimental body OFF.
 
@@ -204,4 +204,4 @@ authored subtitle fallback so text is not left on an off-screen Harry.
 Use actual save books and preserve checkpoints before late-game encounters.
 Exit to Main Menu returns to the game's front end. Exit Game closes this HP1 VR
 session; SteamVR itself may remain open. Do not terminate unrelated SteamVR
-processes to close the mod. Back up Runtime/Save and V30Calibration.ini regularly.
+processes to close the mod. Back up Runtime/Save and V31Calibration.ini regularly.

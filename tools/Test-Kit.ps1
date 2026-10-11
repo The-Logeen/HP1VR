@@ -16,7 +16,7 @@ foreach($f in $manifest.files){
  if((Get-FileHash -LiteralPath $path -Algorithm SHA256).Hash -ne $f.sha256){$problems.Add("Contents changed: $($f.path)")}
 }
 
-foreach($json in 'DEPENDENCIES.json','supported-inputs.json','renderer-files.json','payload/VR/actions_v30.json'){
+foreach($json in 'DEPENDENCIES.json','supported-inputs.json','renderer-files.json','payload/VR/actions_v31.json'){
  try{$null=Get-Content -LiteralPath (Join-Path $KitRoot $json) -Raw -Encoding UTF8 | ConvertFrom-Json}catch{$problems.Add("Invalid JSON: $json")}
 }
 

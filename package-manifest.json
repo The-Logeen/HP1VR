@@ -1,18 +1,18 @@
 {
     "schema":  1,
-    "version":  "V31-final-2026-10-07",
+    "version":  "V31-final-2026-10-11",
     "cpuBridge":  44,
     "gpuBridge":  28,
     "files":  [
                   {
                       "path":  "CHANGELOG.md",
-                      "bytes":  3335,
-                      "sha256":  "2520EBE4F262729AB351BC48C74D921EF7334FBDB9F025FDF031F412BCD2A0E6"
+                      "bytes":  3787,
+                      "sha256":  "35C3C83E1CBB3F4ED6D26E7CFF25CAD0660B00C0EF045C70A33167BFD9359C95"
                   },
                   {
                       "path":  "CONTROLS.md",
                       "bytes":  11698,
-                      "sha256":  "3D8E60905ED40946FD3772E55946B8478D5ED7272E45F6246F9CE64E4C585EEB"
+                      "sha256":  "65AEB68A8C5242C9388E7D54A7A83D45C819468810EEA146D9BC352D09CC93EA"
                   },
                   {
                       "path":  "CREDITS.md",
@@ -37,12 +37,12 @@
                   {
                       "path":  "Install.ps1",
                       "bytes":  10429,
-                      "sha256":  "452D25D87BBC3858C286B1A117FD0A8BCC1CC3934546C3D1F52EC7A6905DA168"
+                      "sha256":  "E3778D68BE437C63A5BB47EF3668805827317A2F67FAC7E18D362C4511178068"
                   },
                   {
                       "path":  "Launch-HP1-VR-V31.exe",
-                      "bytes":  142848,
-                      "sha256":  "869810D077DAA18146156240344EEDF924DC722412D070A88EEF902D4624425A"
+                      "bytes":  143360,
+                      "sha256":  "ED11ECF01160AFECF6CBC807D75BEA0FF4A1804E66AFF6B4E62704E7313146D1"
                   },
                   {
                       "path":  "LICENSE-STATUS.md",
@@ -66,8 +66,8 @@
                   },
                   {
                       "path":  "README.md",
-                      "bytes":  18831,
-                      "sha256":  "84E07F08B072B9A48B047929473A6662AAE7B0804DBBE69D1FF7A4C017F533B5"
+                      "bytes":  19135,
+                      "sha256":  "FC54607C4D7CAF253673D44E6C4C382CDEE153F7BA5C45BAF0CCB42D6E465598"
                   },
                   {
                       "path":  "renderer-files.json",
@@ -76,8 +76,8 @@
                   },
                   {
                       "path":  "SETTINGS.md",
-                      "bytes":  10259,
-                      "sha256":  "FB79F19A44F6489E10BB2D5145AFDF6D86C8B830CB7D056CCA0FD1983FD655B2"
+                      "bytes":  10348,
+                      "sha256":  "0A99AE2FAAC9C0C97FB0491563402FB7952D6F9DC931B32523B763C8DB1A62AF"
                   },
                   {
                       "path":  "Setup.ps1",
@@ -92,15 +92,15 @@
                   {
                       "path":  "TROUBLESHOOTING.md",
                       "bytes":  9842,
-                      "sha256":  "0AC13D65531F2C81D98177ACFD8BF986C95B4C0BDE7175C005203E2588635951"
+                      "sha256":  "64A46BFCE5CB4F0802E525D2EE1FE013EAB766FE0ECEAD472D9E0B3E9379A98D"
                   },
                   {
-                      "path":  "config/HP1VR-V30.ini",
+                      "path":  "config/HP1VR-V31.ini",
                       "bytes":  4456,
                       "sha256":  "E32DD4B33C55513E647BE982E480F7974FFDBD92432B5B01C4614ACFF8672CAB"
                   },
                   {
-                      "path":  "config/StereoV30VR.ini",
+                      "path":  "config/StereoV31VR.ini",
                       "bytes":  11562,
                       "sha256":  "494C17343F23E47E94861AC131CD4FEBE86456DE61AFF29627A8969561BABE9C"
                   },
@@ -122,12 +122,12 @@
                   {
                       "path":  "payload/System/d3d11.dll",
                       "bytes":  135680,
-                      "sha256":  "FA664D1F037D0231F325A8440E5300D97EAC2C14DD01A0DC98251EAABC9D7783"
+                      "sha256":  "125FC9667F69F8DEC78667ED7F45E7EE691F6D4309CFC7BC430FF53959AF6BE5"
                   },
                   {
-                      "path":  "payload/System/HP1VRHostV30.exe",
+                      "path":  "payload/System/HP1VRHostV31.exe",
                       "bytes":  248320,
-                      "sha256":  "402A757D015D4B709D655481917642607FF9DF400CD18FB4D259F0F6C8F02F09"
+                      "sha256":  "F5B028C91EC1C5884B69C6354BA485819E0F538927258D5872BC2A6DAEF4C483"
                   },
                   {
                       "path":  "payload/System/LessonRunes.pcx",
@@ -155,34 +155,34 @@
                       "sha256":  "AB66ECB0C10CA27DB067A7370F473D77BCBBB1F6A3C161F4CF892B59CA84478C"
                   },
                   {
-                      "path":  "payload/VR/actions_v30.json",
+                      "path":  "payload/VR/actions_v31.json",
                       "bytes":  2135,
-                      "sha256":  "E9266213661132AC4F7F8948A88653273DB1C06D39C96AF3B8B0A47B22F5F7B6"
+                      "sha256":  "0AA8F391AF338BB7CA450928D11AC56AB89CBAD41D53DBB5281A3E226F21BE0F"
                   },
                   {
-                      "path":  "payload/VR/bindings_v30_knuckles.json",
+                      "path":  "payload/VR/bindings_v31_knuckles.json",
                       "bytes":  1932,
                       "sha256":  "1295C808C55D95E078F1802AF354B0EEE9E6BF897F3EB599B412E4B9B6834366"
                   },
                   {
-                      "path":  "payload/VR/bindings_v30_oculus_touch.json",
+                      "path":  "payload/VR/bindings_v31_oculus_touch.json",
                       "bytes":  2000,
                       "sha256":  "56393FD8DB9839380E4F820FCC79F9E3EA6D7E649577DC795961E3E4DAD18978"
                   },
                   {
-                      "path":  "payload/VR/bindings_v30_vive_controller.json",
+                      "path":  "payload/VR/bindings_v31_vive_controller.json",
                       "bytes":  2007,
                       "sha256":  "A3506AD9AFC1E3BD862F01E6AA82B07CA3D41360D9490D4E0D8F2DEA931CC36E"
                   },
                   {
-                      "path":  "payload/VR/HP1VRCompositorV30.exe",
+                      "path":  "payload/VR/HP1VRCompositorV31.exe",
                       "bytes":  330240,
-                      "sha256":  "A1B630B313F2D5177BD092DB950B8B9126472DB7D39207CAFB089B485530FD7A"
+                      "sha256":  "5396F7359232AD4D1A5348D97B12715CD469F5E35F6FFA88C01A067495635815"
                   },
                   {
-                      "path":  "payload/VR/HP1VRProbeV30.dll",
+                      "path":  "payload/VR/HP1VRProbeV31.dll",
                       "bytes":  1189888,
-                      "sha256":  "54CC24FE8A33D6D047833367C55B6DAB746A34DC20A61DFE87DA5D875585248A"
+                      "sha256":  "607508BE926404FDC446D9A7C6613574E8D77789DD4FFF451C51027707BBCC48"
                   },
                   {
                       "path":  "payload/VR/openvr_api.dll",
