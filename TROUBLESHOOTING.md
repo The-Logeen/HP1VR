@@ -11,7 +11,56 @@ folders. Those checks are not a substitute for playing every scene in a headset.
 No universal GPU, driver, controller or regional-game compatibility is promised.
 The latest Hermione note readability change still needs in-headset confirmation.
 
-## Setup cannot find or accept a dependency
+## Installer diagnostic logs
+
+Use **Open full log** to see all details or **Copy result details** for the result
+summary. Share the summary plus the relevant log, not just a cropped generic
+error. The current log path appears below the progress box. Recent lines update
+while hashing/copying; the complete file is retained after the window closes.
+
+Normal location: `%LOCALAPPDATA%\HP1VR\InstallerLogs`. If that location cannot be
+written, setup tries `%TEMP%\HP1VR\InstallerLogs`. Each operation gets a unique
+timestamped filename. If the window never opens, check the separate
+`%TEMP%\HP1VR-V31-launcher-*.log` named by Install.cmd. Keep the installer console
+open until setup closes. Bootstrap, GUI and individual operations use separate
+logs; GUI startup logs identify the corresponding worker log.
+
+| Code | What to check |
+|---|---|
+| E_DEST_NOT_EMPTY | Choose a new empty destination; existing files are not overwritten |
+| E_PATH_LAYOUT | Keep inputs, kit and output separate, without nesting output in an input |
+| E_MISSING_FILE | Exact missing path, extracted-folder depth, incomplete downloads/quarantine |
+| E_GAME_VERSION | Unsupported game/script hash; report the expected and actual SHA-256 |
+| E_RENDERER | Exact HP1 DX11 1.6.2 package and extracted parent folder |
+| E_TEXTURE_PACK | Exact ESRGAN v3 package and named missing/mismatched file |
+| E_PACKAGE | Incomplete, edited or mixed-version mod release/JSON record |
+| E_PREREQUISITE | Official x86 VC++ 2010 and DirectX June 2010 installation |
+| E_LINKED_INPUT | Linked folders, junctions or placeholder content |
+| E_ACCESS | Writable destination and security-software/managed-folder restrictions |
+| E_DISK_SPACE | Space on the failing destination or log drive |
+| E_FILE_LOCK | Another application has the named file open |
+| E_PATH_LENGTH | Shorter input/output paths |
+| E_HOST | Supported Windows/PowerShell host and execution policy restrictions |
+| E_UNEXPECTED | No specific diagnosis; report the full exception and failing operation |
+
+Guidance codes classify the reported error; they are not proof that antivirus,
+a driver or another component caused it. Read the underlying exception. Every
+hash mismatch includes expected/actual values; copy errors identify both paths.
+Logs also include stage timestamps, per-file timing and counts, PowerShell/OS
+details, available drive space when queryable and prerequisite file versions.
+
+On copy failures the partial destination is retained, not automatically deleted.
+Retry into a different empty folder. Validation alone does not guarantee enough
+space or write permission for installation. If logging itself cannot write,
+the launcher/console error is the fallback. A power loss or process termination
+can leave a log without a final result; no installer can guarantee a complete
+exception report after those events. The last BEGIN/STAGE entry can still help.
+
+Logs are local only and contain user paths. Review/redact usernames and private
+folder names before sharing; do not include the whole game. Old logs are not
+automatically deleted and may be removed manually after support is complete.
+
+### Dependency folder checks
 
 - Select the game folder containing **System** and **Maps**, not System itself.
 - Extract the renderer archive; select the folder containing **Common** and

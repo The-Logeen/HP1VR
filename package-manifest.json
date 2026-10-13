@@ -1,13 +1,18 @@
 {
     "schema":  1,
-    "version":  "V31-final-2026-10-11",
+    "version":  "V31-final-2026-10-13-installer-logs",
     "cpuBridge":  44,
     "gpuBridge":  28,
     "files":  [
                   {
+                      "path":  "Bootstrap.ps1",
+                      "bytes":  763,
+                      "sha256":  "774CE8419E544E487F4EEA4847B8B8D2832FA100A0D1B3953DB46817103A187F"
+                  },
+                  {
                       "path":  "CHANGELOG.md",
-                      "bytes":  3787,
-                      "sha256":  "35C3C83E1CBB3F4ED6D26E7CFF25CAD0660B00C0EF045C70A33167BFD9359C95"
+                      "bytes":  4219,
+                      "sha256":  "A13A1689509F0ED83CBA880AC42FA7E0950B7F19F9F116DA02F0FF4ABEE2CE38"
                   },
                   {
                       "path":  "CONTROLS.md",
@@ -31,13 +36,13 @@
                   },
                   {
                       "path":  "Install.cmd",
-                      "bytes":  133,
-                      "sha256":  "D1392C7DEC06CBE667752A57C2D72CAC2CA4A1612B60CB1768213EB7AC98358F"
+                      "bytes":  470,
+                      "sha256":  "39BC583A585F0B8BB6632F59FAE4AFBED6F58131AEBC0A06F0CE224B0E01DFA2"
                   },
                   {
                       "path":  "Install.ps1",
-                      "bytes":  10429,
-                      "sha256":  "E3778D68BE437C63A5BB47EF3668805827317A2F67FAC7E18D362C4511178068"
+                      "bytes":  13800,
+                      "sha256":  "1069B81764C40CBD0F6FF79FA430F197791EECB748A1B3C466069FACEB466A90"
                   },
                   {
                       "path":  "Launch-HP1-VR-V31.exe",
@@ -48,6 +53,11 @@
                       "path":  "LICENSE-STATUS.md",
                       "bytes":  1009,
                       "sha256":  "E37F4421C577CC6C1D1E10F6BA3A5D0F6005CD9BBA457AD4A6901D18855EAD91"
+                  },
+                  {
+                      "path":  "LogSupport.ps1",
+                      "bytes":  8234,
+                      "sha256":  "1737C5C8DC0988FF062FC06ABCC4E0AC07A109CCC0833D2730A31D202E49E36E"
                   },
                   {
                       "path":  "MOD-PAGE.md",
@@ -66,8 +76,8 @@
                   },
                   {
                       "path":  "README.md",
-                      "bytes":  19135,
-                      "sha256":  "FC54607C4D7CAF253673D44E6C4C382CDEE153F7BA5C45BAF0CCB42D6E465598"
+                      "bytes":  20399,
+                      "sha256":  "98FBBF4635D8D92EF58396ABF53549282987D60AFCD8642737510BFFA0C6088A"
                   },
                   {
                       "path":  "renderer-files.json",
@@ -81,8 +91,8 @@
                   },
                   {
                       "path":  "Setup.ps1",
-                      "bytes":  4584,
-                      "sha256":  "D37E3968D2B8FE771454BCD723915FE37A25B7A141D34700CF7E35DD342C0569"
+                      "bytes":  7714,
+                      "sha256":  "6021A69CC892C6BEC736EDFA33E0723DEF7C64C834C14B09600E0A6EEB8EAB59"
                   },
                   {
                       "path":  "supported-inputs.json",
@@ -91,8 +101,8 @@
                   },
                   {
                       "path":  "TROUBLESHOOTING.md",
-                      "bytes":  9842,
-                      "sha256":  "64A46BFCE5CB4F0802E525D2EE1FE013EAB766FE0ECEAD472D9E0B3E9379A98D"
+                      "bytes":  12951,
+                      "sha256":  "845DD797F0A55DD20849D9D7EB9FBCD4045541C2014FC495F51FA746F7D76CB2"
                   },
                   {
                       "path":  "config/HP1VR-V31.ini",
