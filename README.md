@@ -196,6 +196,28 @@ the whole folder; it no longer needs the original game folder.
 For crashes, "Code 7" and other problems after installing, see
 [TROUBLESHOOTING.md](TROUBLESHOOTING.md).
 
+### Installer logs and support
+
+Setup now displays live progress and saves detailed logs for **Verify inputs**
+and **Install V31**. Use **Open full log** or **Copy result details** after an
+error. The path is always shown in the installer. Default log folder:
+`%LOCALAPPDATA%\HP1VR\InstallerLogs` (TEMP fallback if unavailable).
+
+Logs include the failing stage, exact paths, expected/actual SHA-256 hashes,
+copy verification, timings, prerequisite versions, error identifiers, full
+exceptions and recovery guidance. The GUI displays recent lines; the full log
+retains the complete operation. No logs are automatically uploaded.
+
+Install.cmd keeps a console open for startup failures and writes an additional
+`%TEMP%\HP1VR-V31-launcher-*.log`. If no setup window opens, read that file.
+This is installer-only; the game's normal console-free launch is unchanged.
+See [installer troubleshooting](TROUBLESHOOTING.md#installer-diagnostic-logs).
+Logs contain local paths/usernames: review and redact them before sharing.
+
+CLI users may add `-LogPath 'D:\Support\HP1VR-install.log'`. Choose a path outside
+the kit, sources and destination. Validation writes diagnostic logs but does not
+create the destination or prove that a later copy will have permission/free space.
+
 ### Download reference
 
 - The renderer's HP1 DLL (`Harry Potter 1\d3d11drv.dll`) must have SHA-256

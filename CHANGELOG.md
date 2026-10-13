@@ -2,6 +2,14 @@
 
 [README](README.md)
 
+## October 13, 2026 — installer diagnostics
+
+Added persistent per-operation logs, live progress, Open full log/Copy result
+details controls, bootstrap failure reporting, stage/operation context, full
+PowerShell exception records, actionable error codes, expected/actual file
+hashes and verified per-file copies. Logs stay outside the distributable kit;
+no telemetry or automatic upload. Game binaries and gameplay are unchanged.
+
 ## October 11, 2026 — consistent V31 runtime names
 
 Launcher, compositor, host, staged probe, startup/renderer/calibration filenames
