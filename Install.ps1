@@ -8,6 +8,10 @@ param(
 $ErrorActionPreference='Stop'
 Set-StrictMode -Version Latest
 $kit=$PSScriptRoot
+. (Join-Path $kit 'SetupPaths.ps1')
+foreach($name in @('GameRoot','RendererRoot','TexturePackRoot','MenuAddonRoot','Destination','LogPath')){Set-Variable -Name $name -Value (Clean-SetupPath (Get-Variable -Name $name -ValueOnly))}
+$GameModRoots=@($GameModRoots | ForEach-Object {Clean-SetupPath $_})
+if($TexturePackRoot -and (Split-Path $TexturePackRoot -Leaf) -eq 'Textures'){$TexturePackRoot=Split-Path $TexturePackRoot -Parent}
 if($LogPath){
  $logFull=[IO.Path]::GetFullPath($LogPath)
  if([IO.Path]::GetExtension($logFull) -ne '.log'){throw 'LogPath must name a .log file outside the kit, input folders and destination.'}
@@ -37,7 +41,7 @@ if(Test-Path -LiteralPath $Destination){if(@(Get-ChildItem -LiteralPath $Destina
 Set-SetupStage 'Required folder layout'
 foreach($name in 'Core.dll','Engine.dll','WinDrv.dll','Galaxy.dll','Fire.dll','HPBase.u','HarryPotter.u','HPMenu.u'){RequireFile (Join-Path $GameRoot "System\$name")}
 RequireFile (Join-Path $GameRoot 'Maps\Lev_Tut1.unr')
-foreach($name in 'Common\D3D11Drv.int','Common\Effects11.dll','Harry Potter 1\d3d11drv.dll','Harry Potter 1\tessellation.cfg','Common\d3d11drv\firstpass.fco'){RequireFile (Join-Path $RendererRoot $name)}
+foreach($name in 'Common\D3D11Drv.int','Common\Effects11.dll','Harry Potter 1\d3d11drv.dll','Harry Potter 1\tessellation.cfg','Common\d3d11drv\firstpass.fco'){RequireFile (Resolve-HP1Renderer $RendererRoot $name)}
 if($TexturePackRoot -and !(Test-Path -LiteralPath (Join-Path $TexturePackRoot 'Textures'))){throw 'Texture pack must contain its Textures folder; select the extracted pack root.'}
 foreach($source in @($GameRoot,$RendererRoot,$TexturePackRoot,$MenuAddonRoot)+$GameModRoots){if($source){
  $script:SetupOperation="Scan linked files: $source";Write-SetupLog DETAIL $script:SetupOperation
@@ -60,9 +64,9 @@ foreach($f in $supported.game){
  Test-SetupHash $path $f.sha256 "Unsupported engine/script build: $($f.name). This VR build uses verified native hooks; refusing an untested combination."
 }
 Set-SetupStage 'Renderer 1.6.2 integrity'
-Test-SetupHash (Join-Path $RendererRoot 'Harry Potter 1\d3d11drv.dll') $supported.renderer.sha256 'This installer expects the HP1 DX11 renderer 1.6.2, not a renderer DLL for another game/version.'
+Test-SetupHash (Resolve-HP1Renderer $RendererRoot 'Harry Potter 1\d3d11drv.dll') $supported.renderer.sha256 'This installer expects the HP1 DX11 renderer 1.6.2, not a renderer DLL for another game/version.'
 $rendererFiles=Read-SetupJson (Join-Path $kit 'renderer-files.json')
-foreach($f in $rendererFiles){$path=Join-Path $RendererRoot $f.path;if(!(Under $path $RendererRoot)){throw "Invalid renderer path: $($f.path)"};RequireFile $path;Test-SetupHash $path $f.sha256 "Renderer 1.6.2 component mismatch: $($f.path)"}
+foreach($f in $rendererFiles){if($f.path -notmatch '^(Common|Harry Potter 1)/' -or $f.path -match '\.\.'){throw 'Invalid renderer manifest path'};$path=Resolve-HP1Renderer $RendererRoot $f.path;RequireFile $path;Test-SetupHash $path $f.sha256 "Renderer 1.6.2 component mismatch: $($f.path)";Write-SetupLog INFO "Resolved renderer component: $path"}
 Set-SetupStage 'ESRGAN v3 integrity'
 if($TexturePackRoot){foreach($f in $supported.textures){$path=Join-Path $TexturePackRoot $f.path;RequireFile $path;Test-SetupHash $path $f.sha256 "Texture pack version/file mismatch: $($f.path). Use the supported ESRGAN v3 pack, or explicitly choose the fallback."}}else{Write-SetupLog WARN 'Original-texture fallback selected explicitly; no ESRGAN pack verified.'}
 Set-SetupStage 'Microsoft runtime prerequisites'
@@ -72,6 +76,7 @@ foreach($dll in 'msvcr100.dll','msvcp100.dll','d3dx11_43.dll','d3dcompiler_43.dl
 }
 Write-Host 'Inputs and mod package verified. Original game and mod source folders will remain unchanged.'
 if($ValidateOnly){Write-SetupLog SUCCESS "Validation complete. checked=$script:SetupChecked elapsedSeconds=$($script:SetupClock.Elapsed.TotalSeconds). Destination not created; permissions/free space for copying are not guaranteed by validation.";return}
+if(Get-Process -Name HP,Game,HP1VRHostV31,HP1VRCompositorV31 -ErrorAction SilentlyContinue){throw 'Close HP1/HP2 and VR host/companion processes before installing.'}
 $runtime=Join-Path $Destination 'Runtime'
 $origins=@{}
 function PutFile([string]$source,[string]$relative,[string]$kind){
@@ -96,16 +101,13 @@ function PutTree([string]$source,[string]$relative,[string]$kind,[switch]$GameFi
 Set-SetupStage 'Create destination'
 $script:SetupOperation="Create destination folders under $Destination"
 New-Item -ItemType Directory -Path $Destination,$runtime,(Join-Path $runtime 'Save'),(Join-Path $runtime 'Cache'),(Join-Path $runtime 'VR') -Force | Out-Null
+[IO.File]::WriteAllText((Join-Path $Destination 'INSTALL-INCOMPLETE.txt'),'Installation unfinished. Do not launch. Keep this folder and logs for diagnosis; retry into another destination.')
 Set-SetupStage 'Copy original game and overlays'
 foreach($dir in 'System','Maps','Textures','Sounds','Music'){PutTree (Join-Path $GameRoot $dir) $dir 'user-game' -GameFiles}
 foreach($mod in $GameModRoots){foreach($dir in 'System','Maps','Textures','Sounds','Music'){PutTree (Join-Path $mod $dir) $dir ('user-game-mod:'+ (Split-Path $mod -Leaf)) -GameFiles}}
 # Follow renderer readme layout, without deleting anything in the supplied game.
 Set-SetupStage 'Copy renderer'
-PutFile (Join-Path $RendererRoot 'Common\D3D11Drv.int') 'System\D3D11Drv.int' 'user-dx11-renderer'
-PutFile (Join-Path $RendererRoot 'Common\Effects11.dll') 'System\Effects11.dll' 'user-dx11-renderer'
-PutFile (Join-Path $RendererRoot 'Harry Potter 1\d3d11drv.dll') 'System\d3d11drv.dll' 'user-dx11-renderer'
-PutFile (Join-Path $RendererRoot 'Harry Potter 1\tessellation.cfg') 'System\tessellation.cfg' 'user-dx11-renderer'
-PutTree (Join-Path $RendererRoot 'Common\d3d11drv') 'System\d3d11drv' 'user-dx11-renderer'
+foreach($f in $rendererFiles){$tail=$f.path -replace '^(Common|Harry Potter 1)/','';PutFile (Resolve-HP1Renderer $RendererRoot $f.path) ('System\'+$tail) 'user-dx11-renderer'}
 Set-SetupStage 'Copy texture pack and optional menu'
 if($TexturePackRoot){PutTree (Join-Path $TexturePackRoot 'Textures') 'Textures' 'user-esrgan-textures';PutTree (Join-Path $TexturePackRoot 'System') 'System' 'user-esrgan-settings' -GameFiles}
 if($MenuLanguage){PutTree (Join-Path $MenuAddonRoot "$MenuLanguage\Textures") 'Textures' ('user-menu-addon:'+ $MenuLanguage)}
@@ -118,6 +120,7 @@ PutFile (Join-Path $kit 'config\VRUser.ini') 'System\VRUser.ini' 'vr-mod-control
 [void](Copy-SetupFile (Join-Path $kit 'Launch-HP1-VR-V31.exe') (Join-Path $Destination 'Launch-HP1-VR-V31.exe'))
 [void](Copy-SetupFile (Join-Path $kit 'config\HP1VR-V31.ini') (Join-Path $Destination 'HP1VR-V31.ini'))
 Set-SetupStage 'Copy documentation'
+[void](Copy-SetupFile (Join-Path $kit 'SETUP-GUIDE.html') (Join-Path $Destination 'SETUP-GUIDE.html'))
 [void](Copy-SetupFile (Join-Path $kit 'README.md') (Join-Path $Destination 'START HERE.md'))
 Get-ChildItem -LiteralPath $kit -Filter '*.md' -File | ForEach-Object { [void](Copy-SetupFile $_.FullName (Join-Path $Destination $_.Name)) }
 [void](Copy-SetupFile (Join-Path $kit 'OPENVR-LICENSE.txt') (Join-Path $Destination 'OPENVR-LICENSE.txt'))
@@ -130,6 +133,7 @@ Write-Host "Installed: $Destination"
 Write-Host "User-supplied DDS replacements: $dds. Saves are local to Runtime\Save. Launch-HP1-VR-V31.exe starts VR."
 Write-Host 'This installed folder contains your game/mod files: keep it private. Share the original mod-only ZIP instead.'
 Write-SetupLog SUCCESS "Installed=$Destination DDS=$dds copied=$script:SetupCopied skipped=$script:SetupSkipped checked=$script:SetupChecked bytes=$script:SetupBytes elapsedSeconds=$($script:SetupClock.Elapsed.TotalSeconds)"
+Remove-Item -LiteralPath (Join-Path $Destination 'INSTALL-INCOMPLETE.txt')
 } catch {
  $failure=$_
  try {Write-Host (Write-SetupFailure $failure)}catch{Write-Host "Could not finish diagnostic log: $($_.Exception.Message). Original error: $($failure.Exception.ToString())"}

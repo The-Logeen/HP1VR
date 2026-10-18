@@ -10,19 +10,30 @@ mod-only release kit, not a free copy of the game and not a standalone Quest app
 
 | Release | Details |
 |---|---|
-| Build | V31, October 11, 2026 naming update |
+| Build | V31, October 18, 2026 Steam Frame / independent aiming prerelease |
 | Platform | Windows 10/11 x64; SteamVR/OpenVR |
 | Game | Compatible 2001 PC Philosopher's Stone / Sorcerer's Stone files |
 | Distribution | VR binaries, installer, configuration, bindings and VR assets |
 | Compatibility | Exact engine/script hashes checked by setup |
-| Verification | 58 CPU regressions passed; installation/hash checks passed |
-| Remaining acceptance | Latest Hermione note text fix needs headset confirmation |
+| Verification | 25 test programs and a full isolated install passed; see [VALIDATION.md](VALIDATION.md) |
+| Remaining acceptance | Steam Frame hardware and the rebuilt runtime need headset confirmation |
 
 **License:** The-Logeen's own V31 work in this kit is released under the
 [MIT License](LICENSE). That does not cover the original game, the DX11 renderer,
 the texture pack or Valve's OpenVR files, which keep their own terms. This kit
 ships binaries; the C++ source tree is not included. See
 [license status](LICENSE-STATUS.md) and [credits](CREDITS.md).
+
+## New in the October 18 build
+
+Explicit Steam Frame controller bindings (experimental), separate wand pitch/yaw
+and pointer yaw alongside the existing pointer pitch, and an aim-only reset.
+Existing Touch/Index/Vive binding files are unchanged. HP1's pointer pitch default
+is preserved (15 degrees down); the three new angles default to zero. Read
+[Frame controls and calibration](FRAME-CONTROLS.md). The installer now shows a
+component status table with repair advice, a **Use original textures** fallback
+and process-only PowerShell policy handling. Install into a new folder; never
+replace individual binaries in an old installation.
 
 ## What V31 adds
 
@@ -56,14 +67,16 @@ third-party game build has been fully playtested. See [known issues](TROUBLESHOO
    **Verify inputs** → **Install V31**.
 3. Start SteamVR and run **Launch-HP1-VR-V31.exe** from the new installation folder.
 
-Full instructions: [Install, step by step](#install-step-by-step).
+Full instructions: [Install, step by step](#install-step-by-step), or open
+**SETUP-GUIDE.html** in the kit for a click-by-click guide.
 
 ## Documentation
 
 - [Controls and how to play](CONTROLS.md)
+- [Steam Frame controls and aim calibration](FRAME-CONTROLS.md)
 - [Complete settings reference](SETTINGS.md)
 - [Troubleshooting, known issues and reporting bugs](TROUBLESHOOTING.md)
-- [Release history](CHANGELOG.md)
+- [Release history](CHANGELOG.md) and [validation for this build](VALIDATION.md)
 - [Credits and third-party components](CREDITS.md)
 - [Copy-ready mod-page descriptions](MOD-PAGE.md)
 - [GitHub publishing checklist](PUBLISHING.md)
@@ -174,8 +187,8 @@ instructions to delete `HP.ini`. The VR installer handles all of this.
    and double-click **Launch-HP1-VR-V31.exe**. Never start `HP.exe` directly.
 3. Put on the headset and stand up straight while the game starts.
 4. Squeeze both grips to recenter. Open VR settings with the **game-menu button
-   + right grip** (left Y on Touch, left B on Index, left menu button on Vive)
-   and follow [first-run calibration](CONTROLS.md#first-run-calibration).
+   + right grip** (left Y on Touch, left B on Index, left menu button on Vive,
+   left View on Frame) and follow [first-run calibration](CONTROLS.md#first-run-calibration).
 
 Your saves and settings live inside the installation folder. To move it, move
 the whole folder; it no longer needs the original game folder.
@@ -232,7 +245,8 @@ create the destination or prove that a later copy will have permission/free spac
 ### Supported scope
 
 No minimum GPU or guaranteed frame rate has been established. Bundled controller
-bindings cover Oculus Touch, Index/Knuckles and Vive; other controllers may need
+bindings cover Oculus Touch, Index/Knuckles, Vive and (experimental) Steam Frame;
+other controllers may need
 remapping in SteamVR. Regional game versions, community script revisions and
 other gameplay mods are not supported. This kit contains the VR code, VR art,
 controller bindings and Valve's OpenVR DLLs; it contains no game files, renderer
@@ -265,9 +279,9 @@ unidentified extras in a different person's base-game installation.
 ## Controls and tuning
 
 - Open/close VR settings: **game-menu button + right grip** (left Y on Touch,
-  left B on Index, left menu button on Vive). Point and trigger or use
-  the left stick to select and adjust settings. Controller bindings included for
-  Oculus Touch, Index/Knuckles and Vive; button names differ across devices.
+  left B on Index, left menu button on Vive, left View on Frame). Point and
+  trigger or use the left stick to select and adjust settings. Controller bindings
+  included for Oculus Touch, Index/Knuckles, Vive and Frame; button names differ across devices.
 - Stand upright for initial calibration/recenter. Set virtual eye height,
   independent avatar body scale, hip height and head-forward/neck placement in
   the VR menu. Another person's body calibration is deliberately not included.
@@ -345,5 +359,5 @@ installing (for example after copying it), run
 `powershell -ExecutionPolicy Bypass -File tools\Test-Kit.ps1` from a Git clone.
 Release ZIPs come with a `.sha256` file; compare it with
 `Get-FileHash HP1-VR-V31-*.zip`. Explicit -TexturePackRoot '' selects
-original-texture fallback through the CLI only; that does not match the enhanced
-appearance. GUI requires the v3 pack to match the intended release.
+original-texture fallback; the GUI also offers **Use original textures**. This
+works without ESRGAN but does not match the enhanced texture appearance.

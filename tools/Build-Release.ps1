@@ -1,5 +1,5 @@
 # Builds the player download: dist/HP1-VR-V31-<Version>.zip plus a .sha256 file.
-# The ZIP holds only the installable kit (manifest files, the manifest and LICENSE)
+# The ZIP holds only the installable kit (manifest files, including LICENSE, and the manifest)
 # inside one top folder, so players can extract it and run Install.cmd.
 [CmdletBinding()]
 param([string]$Version,[string]$KitRoot=(Split-Path $PSScriptRoot -Parent),[string]$OutDir)
@@ -14,7 +14,7 @@ if($LASTEXITCODE){throw 'Kit check failed; release not built.'}
 $manifest=Get-Content -LiteralPath (Join-Path $KitRoot 'package-manifest.json') -Raw -Encoding UTF8 | ConvertFrom-Json
 if(!$Version){$Version=$manifest.version}
 $top='HP1 VR V31 Mod'
-$files=@($manifest.files | ForEach-Object { $_.path }) + 'package-manifest.json','LICENSE'
+$files=@($manifest.files | ForEach-Object { $_.path }) + 'package-manifest.json'
 
 New-Item -ItemType Directory -Force -Path $OutDir | Out-Null
 $zip=Join-Path ([IO.Path]::GetFullPath($OutDir)) "HP1-VR-V31-$Version.zip"

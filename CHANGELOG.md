@@ -2,6 +2,19 @@
 
 [README](README.md)
 
+## October 18, 2026 — Steam Frame bindings and independent aiming
+
+- Explicit Steam Frame profile; existing Touch/Index/Vive binding files unchanged.
+- Controller Aim / Frame category: independent wand pitch/yaw, pointer yaw and existing pointer pitch; aim-only reset and saved settings. Old pointer pitch/default retained.
+- Wand calibration shared by visible shaft, spell direction, spell-lesson tip and Wingardium aiming. Raw tracking, holster position and movement unchanged.
+- Matched runtime rebuilt; CPU bridge incremented to 45, GPU transport remains 28. Do not mix runtime binaries across releases.
+- Installer component table, row-specific repair advice, explicit original-texture fallback, Open installed folder and smaller-screen scrolling. Detailed diagnostics and dependency hash checks retained.
+- Process-only PowerShell execution policy in Install.cmd. No persistent policy or antivirus changes.
+- New FRAME-CONTROLS.md, VALIDATION.md and SETUP-GUIDE.html, copied to the installation.
+- Side-by-side installation only. HP1 save/settings transfer is documented manual copying.
+
+See VALIDATION.md. This is a prerelease until headset and Frame acceptance.
+
 ## October 13, 2026 — installer diagnostics
 
 Added persistent per-operation logs, live progress, Open full log/Copy result

@@ -1,5 +1,7 @@
 # Settings reference
 
+New: **Controller Aim / Frame** contains pointer pitch/yaw and wand pitch/yaw plus aim-only reset. See [defaults, signs and recovery keys](FRAME-CONTROLS.md). Existing pointer pitch remains positive DOWN/default 15; new angles start at zero.
+
 [Back to README](README.md) · [Playing and controls](CONTROLS.md)
 
 Open VR settings with the controller menu button plus right grip (Touch: Y +

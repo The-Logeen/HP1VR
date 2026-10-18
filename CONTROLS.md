@@ -205,3 +205,7 @@ Use actual save books and preserve checkpoints before late-game encounters.
 Exit to Main Menu returns to the game's front end. Exit Game closes this HP1 VR
 session; SteamVR itself may remain open. Do not terminate unrelated SteamVR
 processes to close the mod. Back up Runtime/Save and V31Calibration.ini regularly.
+# Frame release candidate additions
+
+See [Frame bindings and independent angle controls](FRAME-CONTROLS.md) for the complete new mapping, calibration and troubleshooting. Existing controls below remain in place.
+
